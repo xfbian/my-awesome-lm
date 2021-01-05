@@ -7,11 +7,15 @@
 ![](../../resource/lm-ngram/fig1.jpg)
 <br />
 * More formally: given a sequence of words $x^{(1)},x^{(2)},...,x^{(t)}$, compute the probability distribution of the next word $x^{(t+1)}$:
-$$P(x^{(t+1)}|x^{(t)},...,x^{(1)})$$
-where $x^{(t+1)}$ can be any word in the vocabulary $V = \{w_1,...,w_{|V|}\}$
-<br />
+  $$
+  P(x^{(t+1)}|x^{(t)},...,x^{(1)})
+  $$
+  where $x^{(t+1)}$ can be any word in the vocabulary $V = \{w_1,...,w_{|V|}\}$
+  <br />
+
 * A system that dose this is called a Language Model.
-<br />
+  <br />
+
 * You can also think of a Language Model as a system that <font color=red>assigns probability to a piece of text</font>.
 For example, if we have some text $x^{(1)},...,x^{(T)}$, then the probability of this text (according to the Language Model) is:
 ![](../../resource/lm-ngram/fig2.jpg)
@@ -42,7 +46,7 @@ For example, if we have some text $x^{(1)},...,x^{(T)}$, then the probability of
 * Idea: Collect statistics about how frequent different n-grams are, and use these to predict next word.
 
 ### n-gram model
- 
+
 #### assumption
 First we make a <font color=red>simplifying assumption</font>: $x^{(t+1)}$ depends only on the preceding n-1 words.
 ![](../../resource/lm-ngram/fig3.jpg)
@@ -94,9 +98,15 @@ An intrinsic evaluation metric is one that mea- sures the quality of a model ind
 目前，绝大多数的机器学习任务都是采用intrinsic的评估方式。
 
 ### Perplexity
-$$PP(W) = P(w_1w_2...w_N)^{-\frac{1}{N}} = \sqrt[N]{\frac{1}{P(w_1w_2...w_N)}}$$
+$$
+PP(W) = P(w_1w_2...w_N)^{-\frac{1}{N}} = \sqrt[N]{\frac{1}{P(w_1w_2...w_N)}}
+$$
+
 We can use the chain rule to expand the probability of W:
-$$PP(W) = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{P(w_1w_2...w_N)}}$$
+$$
+PP(W) = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{P(w_1w_2...w_N)}}
+$$
+
 
 
 ## Unknown Words(集外词)
